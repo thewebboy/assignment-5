@@ -1,0 +1,47 @@
+<div  class="row" ng-repeat= "datum in data  | filter : search | orderBy : name | sortFilter : sortType" >
+	
+	<!--display by book list-->
+
+	<div ng-if="datum.authors" ng-init="type='books'">
+		<div class="panel panel-info col-sm-offset-2 col-xs-12 col-sm-8" id="booksDetails">
+			<div style="background-color: black; color: white"> <h4 class="glyphicon glyphicon-book">Book - {{datum.name}}</h4></div>
+			<div class="panel-body"> 
+				<div>Author - <em>{{ datum.authors[0] }}</em> </div>
+				<div>Publisher - <em>{{ datum.publisher}}</em> </div>
+				<div>ISBN - <em>{{ datum.isbn}}</em> </div>
+				<br>
+				<a class="btn btn-danger" ng-href="#/{{type}}/{{datum.isbn}}"> Details</a>
+			</div>
+		</div>
+	</div>
+	
+		<!--display by house list-->
+
+	<div ng-if ="datum.region" ng-init="type = 'houses'">
+		<div class="success col-sm-offset-2 col-xs-12 col-sm-8 house-card">
+			<div class="head-house-card"> <h4 class="glyphicon glyphicon-tent">House Name - {{datum.name}}</h4> </div>
+			<div class="card-content"> 
+				<div> Region - <em>{{datum.region}}</em> </div>
+				<br>
+				<a class="btn btn-danger" ng-href="#/{{type}}/{{datum.name}}"> Details</a>
+			</div>
+		</div>
+	</div>
+		
+		
+<!--display by character list-->
+
+	<div ng-if="datum.gender" ng-init="type = 'characters'">
+		<div  class="col-md-danger col-sm-offset-2 col-xs-12 col-sm-8 character-card">
+			<div class="head-character-card"><h4 class="glyphicon glyphicon-user"> Alias Name - {{datum.aliases[0]}} </h4></div>
+			<div class="card-content" style="color : black;"> 
+				<div> Gender - <em>{{datum.gender}}</em> </div>
+				<div ng-if="datum.culture"> Culture - <em>{{datum.culture}}</em> </div>
+				<br>
+				<a class="btn btn-danger" ng-href="#/{{type}}/{{datum.aliases[0]}}"> Details</a>
+			</div>
+		</div>
+	</div>
+	
+	
+</div>

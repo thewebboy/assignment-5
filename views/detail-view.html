@@ -1,0 +1,84 @@
+<div class="row">
+
+
+<!--information for search by books-->
+
+	<div ng-if="myData.authors">
+		<div class="panel panel-primary col-sm-offset-2 col-xs-12 col-sm-8" id="booksDetails">
+			<div class="panel-heading" style="background-color: black; border-color: black;"> <h4><b>Book</b> - {{myData.name}}</h4></div>
+			<div class="panel-body"> 
+				<div ng-if="myData.authors[0]"><b>Author</b> - {{myData.authors[0] }} </div>
+				<div ng-if="myData.publisher"><b>Publisher</b> - {{myData.publisher}} </div>
+				<div ng-if="myData.numberOfPages"><b>No of pages</b> - {{myData.numberOfPages}} </div>
+				<div ng-if="myData.mediaType"><b>Media Type</b> - {{myData.mediaType}} </div>
+				<div ng-if="myData.released"><b>Release Date</b> - {{myData.released | date : 'medium' }}</div>
+				<div ng-if="myData.country"><b>Country</b> - {{myData.country }} </div>
+				<div ng-if="myData.characters"><b>No of characters</b> - {{myData.characters.length }} </div>
+				<div ng-if="myData.isbn"><b>ISBN</b> - {{myData.isbn}} </div>
+				<br>
+			</div>
+		</div>
+		
+	</div>
+
+<!--information for search by house-->
+
+
+	<div ng-if ="myData.region" >
+		<div class="success col-sm-offset-2 col-xs-12 col-sm-8 house-card">
+			<div class="head-house-card"> <h4><b>House Name</b> - {{myData.name}}</h4> </div>
+			<div class="card-content" > 
+				<div> <b>Region</b> - {{myData.region}} </div>
+				<div ng-if="myData.titles != 0 || myData.titles[0] != ''"> 
+					<div ng-repeat="seat in myData.seats">	
+						<b>Seat {{1+$index}}</b> - {{seat}} 
+					</div>
+				</div>
+				<div ng-if="myData.coatOfArms">
+					 <b>Arm Coat</b> - {{myData.coatOfArms}}
+				</div>
+				<div ng-if="myData.swornMembers.length"> 
+					<b>No. of sworn members</b> - {{myData.swornMembers.length}}
+				</div>
+				<div ng-if="myData.titles != 0 || myData.titles[0] != ''"> <b>No. of Titles</b> - {{myData.titles.length}}</div>
+				<div ng-repeat="title in myData.titles" ng-if="myData.titles != 0 || myData.titles[0] != ''">
+					<li> {{title}}</li> 
+				</div>
+				
+				<div ng-if="myData.founded"> <b>Founded </b> - {{myData.founded}} </div>
+				<div ng-if="myData.words"> <b>Words</b> - {{myData.words}} </div>
+				<div ng-if="overlord"> <b>Overlord</b> - {{overlord}} </div>
+				<div ng-if="currentlord"> <b>Currentlord</b> - {{currentlord}} </div>
+				<div ng-if="heir"> <b>Heir</b> - {{heir}} </div>
+				<br>
+			</div>
+		</div>
+	</div>
+
+<!--information for search by characters-->
+
+
+	<div ng-if="myData.gender">
+		<div  class="col-md-danger col-sm-offset-2 col-xs-12 col-sm-8 character-card">
+			<div class="head-character-card"><h4> <b>Character's Name</b> - {{myData.aliases[0]}} </h4></div>
+			<div class="card-content" style="color: black;"> 
+				<div ng-if="myData.name"> <b>Name</b> - {{myData.name}} </div>
+				<div > <b>Gender</b> - {{myData.gender}} </div>
+				<div ng-if="myData.culture"> <b>Culture</b> - {{myData.culture}} </div>
+				<div> <b>No. of Books</b> - {{myData.books.length}}</div>
+				<div ng-repeat="book in myBook" ng-if="myData.books.length">
+					<li> {{book}}</li> 
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<br><br>
+
+	<!--button for back-->
+
+	<a class="btn btn-danger col-sm-offset-1" ng-href="#/"> &larr; Back</a>
+	<br><br>
+</div>

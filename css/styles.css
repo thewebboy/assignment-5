@@ -1,0 +1,64 @@
+body{
+	background : linear-gradient(white , #474747) ;
+}
+*{
+	box-sizing: border-box;
+}
+
+a{
+	color : black;
+}
+
+#booksDetails{
+    background-color:grey; 
+    color: white; 
+    border-color: black;
+    box-shadow: -5px -5px 12px #323234;
+}
+.house-card{
+
+	border : 2px solid grey ;
+	box-shadow: -5px -5px 12px #323234;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 0px 15px 0px 15px ;
+	background-color: grey;
+	font-family: tahoma ;
+    color: white;
+}
+
+.character-card {
+
+	border : 1px solid black;
+	box-shadow: 5px 5px 10px #444 ;
+	border-radius: 15px 10px ;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 15px 5px ;
+	background-color: grey;
+	font-family: sans-serif;
+    color: white;
+
+
+}
+
+.head-house-card {
+    color: white;
+	background-color: black;
+	padding: 5px ;
+	
+}
+
+.head-character-card {
+     color: white;
+	background-color: black;
+	padding: 5px ;
+		
+}
+
+.card-content {
+
+	padding: 10px;
+	font-size: 1.1em;
+}
+

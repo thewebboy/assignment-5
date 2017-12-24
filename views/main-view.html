@@ -1,0 +1,54 @@
+<div class="container">
+
+	<div class="row">
+
+<!--filter for sorting in ascending or descending order-->
+
+
+		<form name="sortType" class="form-horizontal ">
+		<div class="form-group col-sm-6">
+				<label class="glyphicon glyphicon-th-list"> Sort </label>
+				<select ng-model="sortType">
+					<option value='' ng-selected="true"> Sort by books, houses name and character's name</option>
+					<option value='descending' > DESC order</option>
+					<option value='ascending' > ASC order</option>
+				</select> 
+			</div>
+
+
+	<!--filter to search by Book name-->
+
+			<div class="form-group col-sm-6">
+				<label class="glyphicon glyphicon-search"> Search by Book or House Name </label>
+				<input type="text" name="name" ng-model="search.name">
+			</div>
+
+	<!--filter to search by character name-->
+
+			<div class="form-group col-sm-6">
+				<label class="glyphicon glyphicon-search"> Filter by Character </label> 
+				<input type="text" name="character" ng-model="search.aliases">
+			</div>
+
+
+	<!--filter to search by region-->
+
+			<div class="form-group col-sm-6">
+				<label class="glyphicon glyphicon-search"> Filter by Region </label>
+				<input type="text" name="region" ng-model="search.region">
+			</div>
+
+
+
+				<!--back button to refresh-->
+			<div class="col-sm-6">
+				<input type="button" value="Reload" id="button" class="btn btn-danger">
+			</div>
+		</form>
+
+		
+	</div>
+	<br><br>
+	<book-directive></book-directive> 	<!--custom directive -->
+</div>
+    	
